@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0c0e16">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Aura Hi-Fi">
+<link rel="manifest" href="./manifest.json">
+<title>Aura Hi-Fi · Online</title>
+<style>
+:root{color-scheme:dark;--bg:#0c0e16;--panel:#171b29;--line:#ffffff18;--muted:#a6aec4;--lav:#c2b2ff;--mint:#80ead9}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#3b2c61 0,#151629 38%,#0c0e16 72%);color:#f7f7fc;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}
+main{max-width:560px;margin:auto;padding:calc(18px + env(safe-area-inset-top)) 17px calc(25px + env(safe-area-inset-bottom))}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.brand{font-weight:850;font-size:22px;letter-spacing:-.7px}.brand em{font-style:normal;color:var(--lav)}.status{border:1px solid #80ead944;color:var(--mint);font-size:10px;letter-spacing:1px;padding:7px 9px;border-radius:99px}
+.hero{border:1px solid var(--line);border-radius:26px;background:linear-gradient(145deg,#292447,#151c30 58%,#12403f);padding:20px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:190px;height:190px;border:1px solid #ffffff15;border-radius:50%;right:-55px;top:-65px;box-shadow:0 0 0 25px #ffffff06,0 0 0 50px #ffffff04;pointer-events:none}
+.eyebrow{font-size:10px;letter-spacing:2px;color:#d1c9ff}.hero h1{font-size:25px;line-height:1.13;margin:9px 0}.hero p{color:#c0c4d5;font-size:13px;line-height:1.5;max-width:330px;margin:0}
+.panel{border:1px solid var(--line);background:#171b29e8;border-radius:21px;padding:17px;margin-top:13px}.heading{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}.heading h2{font-size:15px;margin:0}.chip{font-size:10px;border:1px solid #c2b2ff44;color:var(--lav);border-radius:8px;padding:5px 7px;white-space:nowrap}
+label{font-size:12px;color:#dce0ef;display:block;margin:12px 0 7px}input,select{width:100%;min-width:0;border:1px solid #ffffff20;background:#0e111b;color:#fff;border-radius:12px;padding:12px;font:inherit;font-size:13px}input::placeholder{color:#737d94}
+button{font:inherit;cursor:pointer}.btn{border:1px solid #ffffff20;background:#ffffff08;color:#f7f7fc;border-radius:13px;padding:12px 13px;font-size:13px}.primary{border:0;background:linear-gradient(135deg,#e1d9ff,#a797f1);color:#191529;font-weight:750}.row{display:flex;gap:9px;align-items:center}.row>*{flex:1}.hint{font-size:11px;line-height:1.55;color:var(--muted);margin-top:9px}
+.now{display:flex;align-items:center;gap:13px}.art{width:58px;height:58px;border-radius:17px;background:radial-gradient(circle at 30% 25%,#fff,#c2b2ff 25%,#6350a1 60%,#111323 72%);flex-shrink:0;box-shadow:0 0 28px #c2b2ff30}.song{font-weight:750;font-size:16px;overflow-wrap:anywhere}.sub{font-size:11px;color:var(--muted);margin-top:5px;overflow-wrap:anywhere}
+.progress{accent-color:var(--lav);padding:0;border:0;background:transparent;margin:15px 0 3px}.times{display:flex;justify-content:space-between;font-size:10px;color:var(--muted)}
+.controls{display:flex;justify-content:center;align-items:center;gap:15px;margin-top:13px}.circle{border:0;background:#ffffff0b;color:white;border-radius:50%;width:43px;height:43px;font-size:17px}.play{width:58px;height:58px;border:0;border-radius:50%;background:linear-gradient(135deg,#e1d9ff,#a797f1);color:#191529;font-size:22px}
+.presets{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.preset{padding:11px 6px;font-size:11px}.preset[aria-pressed=true]{border-color:#c2b2ff;color:#e2d9ff;background:#c2b2ff16}
+.eqrow{display:grid;grid-template-columns:1fr auto;gap:6px;margin:15px 0}.eqrow input{grid-column:1/3;padding:0;accent-color:var(--lav)}output{font-size:11px;color:var(--mint)}
+.notice{font-size:11px;line-height:1.65;color:#969fb5;padding:12px 4px}.notice strong{color:#e2d9ff}footer{text-align:center;color:#6e768c;font-size:10px;padding:10px 0}
+#message{font-size:12px;line-height:1.5;color:var(--mint);margin-top:10px;min-height:16px}
+</style>
+</head>
+<body><main>
+<header><div class="brand">aura <em>Hi‑Fi</em></div><div class="status">ONLINE PLAYER</div></header>
+<section class="hero"><div class="eyebrow">PERSONAL SOUND STUDIO</div><h1>Nghe sâu hơn.<br>Nghe rõ hơn.</h1><p>Trình phát stream trực tuyến với EQ tùy chỉnh, điều khiển màn hình khóa và giao diện tối ưu cho iPhone.</p></section>
+
+<section class="panel">
+<div class="heading"><h2>Thêm nguồn nhạc trực tuyến</h2><span class="chip">STREAM URL</span></div>
+<label for="streamUrl">Địa chỉ stream âm thanh trực tiếp</label>
+<input id="streamUrl" type="url" placeholder="https://example.com/live.mp3" autocomplete="url">
+<div class="row" style="margin-top:9px"><button class="btn primary" id="loadStream">Mở nguồn nhạc</button><button class="btn" id="demo">Dùng stream demo</button></div>
+<div class="hint">Dùng URL phát âm thanh trực tiếp (MP3/AAC/HLS tùy Safari và máy chủ). Link trang YouTube/Spotify thông thường không phải URL audio trực tiếp và không thể phát bằng ô này.</div>
+<div id="message" role="status"></div>
+</section>
+
+<section class="panel">
+<div class="heading"><h2>Đang phát</h2><span class="chip" id="mode">READY</span></div>
+<div class="now"><div class="art"></div><div style="min-width:0"><div class="song" id="song">Chưa chọn nguồn nhạc</div><div class="sub" id="sourceLabel">Dán URL stream hợp pháp ở phía trên</div></div></div>
+<audio id="audio" controls preload="none" playsinline style="width:100%;height:34px;margin-top:16px"></audio>
+<div class="controls"><button class="circle" id="stop" aria-label="Dừng">■</button><button class="play" id="play" aria-label="Phát hoặc tạm dừng">▶</button><button class="circle" id="mute" aria-label="Tắt tiếng">♪</button></div>
+<div class="hint">Mẹo phát nền: bắt đầu phát trong Safari, rồi khóa màn hình. Nếu trình duyệt cho phép, dùng điều khiển ở màn hình khóa hoặc Control Center.</div>
+</section>
+
+<section class="panel">
+<div class="heading"><h2>Smart Sound · EQ</h2><span class="chip">DSP PRESETS</span></div>
+<p class="hint" style="margin-top:0">Các cấu hình dưới đây là xử lý DSP/EQ phía trình duyệt, chưa phải mô hình AI học sâu. Chọn mức nhẹ để tránh méo tiếng và giữ âm lượng an toàn.</p>
+<div class="presets">
+<button class="btn preset" data-preset="balanced" aria-pressed="true">Cân bằng</button>
+<button class="btn preset" data-preset="warm" aria-pressed="false">Ấm & bass</button>
+<button class="btn preset" data-preset="clarity" aria-pressed="false">Rõ giọng</button>
+</div>
+<div class="eqrow"><label for="bass">Bass · Độ sâu</label><output id="bassOut">+1 dB</output><input id="bass" type="range" min="-6" max="6" value="1"></div>
+<div class="eqrow"><label for="mid">Mid · Giọng hát</label><output id="midOut">0 dB</output><input id="mid" type="range" min="-6" max="6" value="0"></div>
+<div class="eqrow"><label for="treble">Treble · Chi tiết</label><output id="trebleOut">+1 dB</output><input id="treble" type="range" min="-6" max="6" value="1"></div>
+<button class="btn" id="reset" style="width:100%">Đặt lại EQ</button>
+<div class="hint">Lưu ý: khi bật EQ Web Audio, iOS có thể hạn chế xử lý khi chạy nền. Tắt EQ nếu ưu tiên độ ổn định phát nền hơn chất âm đã xử lý.</div>
+</section>
+
+<section class="panel">
+<div class="heading"><h2>Khóa màn hình & cài đặt</h2><span class="chip">iOS</span></div>
+<div class="row"><button class="btn" id="install">Cài lên màn hình chính</button><button class="btn" id="bgHelp">Hướng dẫn phát nền</button></div>
+<div class="hint">Trên iPhone: mở trang qua Safari → Chia sẻ → Thêm vào MH chính. PWA không đảm bảo phát nền như ứng dụng iOS native.</div>
+</section>
+<div class="notice"><strong>Về Hi‑Fi và AI:</strong> AirPods 2 kết nối Bluetooth AAC, không hỗ trợ lossless Bluetooth. EQ có thể điều chỉnh âm sắc nhưng không thể tạo lại chi tiết đã mất trong bản thu. Muốn AI enhancement thực sự cần mô hình xử lý âm thanh riêng; muốn phát nền ổn định nhất nên xây ứng dụng iOS native dùng AVPlayer/AVAudioSession.</div>
+<footer>AURA HI‑FI · BUILD 0.2 · STREAM PLAYER PROTOTYPE</footer>
+</main>
+<script>
+const audio=document.getElementById('audio'), urlInput=document.getElementById('streamUrl'), message=document.getElementById('message');
+let audioCtx=null, filters=[], sourceNode=null, eqEnabled=false;
+const presets={balanced:[1,0,1],warm:[3,0,-1],clarity:[0,2,2]};
+function say(s){message.textContent=s}
+function applyPreset(name){const v=presets[name];['bass','mid','treble'].forEach((id,i)=>{document.getElementById(id).value=v[i];document.getElementById(id).dispatchEvent(new Event('input'))});document.querySelectorAll('[data-preset]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.preset===name)))}
+function setupEQ(){try{if(!audioCtx){audioCtx=new(window.AudioContext||window.webkitAudioContext)();sourceNode=audioCtx.createMediaElementSource(audio);const b=audioCtx.createBiquadFilter();b.type='lowshelf';b.frequency.value=180;const m=audioCtx.createBiquadFilter();m.type='peaking';m.frequency.value=1100;m.Q.value=.85;const t=audioCtx.createBiquadFilter();t.type='highshelf';t.frequency.value=5000;sourceNode.connect(b).connect(m).connect(t).connect(audioCtx.destination);filters=[b,m,t]}if(audioCtx.state==='suspended')audioCtx.resume();eqEnabled=true;return true}catch(e){say('EQ không khả dụng trong phiên Safari này. Có thể phát nhạc bình thường không qua EQ.');return false}}
+['bass','mid','treble'].forEach((id,i)=>document.getElementById(id).addEventListener('input',e=>{document.getElementById(id+'Out').textContent=(Number(e.target.value)>0?'+':'')+e.target.value+' dB';if(setupEQ()&&filters[i])filters[i].gain.value=Number(e.target.value)}));
+document.querySelectorAll('[data-preset]').forEach(b=>b.addEventListener('click',()=>applyPreset(b.dataset.preset)));
+document.getElementById('reset').addEventListener('click',()=>applyPreset('balanced'));
+function setSource(url,label){if(!/^https?:\/\//i.test(url)){say('Vui lòng nhập URL HTTPS/HTTP hợp lệ.');return}audio.src=url;audio.load();document.getElementById('song').textContent=label||'Stream trực tuyến';document.getElementById('sourceLabel').textContent=new URL(url).hostname;document.getElementById('mode').textContent='STREAM';say('Đã nạp nguồn. Nhấn Phát để bắt đầu. Nếu không phát, nguồn có thể chặn CORS hoặc không tương thích Safari.');if('mediaSession'in navigator){navigator.mediaSession.metadata=new MediaMetadata({title:label||'Stream trực tuyến',artist:'Aura Hi‑Fi',album:'Online stream'});try{navigator.mediaSession.setActionHandler('play',()=>audio.play());navigator.mediaSession.setActionHandler('pause',()=>audio.pause())}catch(e){}}}
+document.getElementById('loadStream').addEventListener('click',()=>setSource(urlInput.value.trim()));
+document.getElementById('demo').addEventListener('click',()=>{urlInput.value='https://icecast.radiofrance.fr/fip-hifi.aac';setSource(urlInput.value,'FIP · Demo radio stream')});
+document.getElementById('play').addEventListener('click',()=>{if(!audio.src){say('Hãy nhập nguồn stream trước.');return}if(audio.paused){if(eqEnabled&&audioCtx?.state==='suspended')audioCtx.resume();audio.play().then(()=>say('Đang phát.')).catch(()=>say('Không phát được nguồn này. Hãy kiểm tra URL hoặc thử nguồn stream khác.'))}else audio.pause()});
+audio.addEventListener('play',()=>{document.getElementById('play').textContent='Ⅱ';document.getElementById('mode').textContent='PLAYING'});
+audio.addEventListener('pause',()=>{document.getElementById('play').textContent='▶';if(audio.src)document.getElementById('mode').textContent='PAUSED'});
+audio.addEventListener('error',()=>say('Lỗi nguồn stream: thử URL trực tiếp khác; một số dịch vụ không cho phép phát ngoài ứng dụng của họ.'));
+document.getElementById('stop').addEventListener('click',()=>{audio.pause();audio.currentTime=0});
+document.getElementById('mute').addEventListener('click',()=>{audio.muted=!audio.muted;document.getElementById('mute').textContent=audio.muted?'×':'♪'});
+document.getElementById('install').addEventListener('click',()=>alert('Mở website đã triển khai qua HTTPS trong Safari → Chia sẻ → Thêm vào MH chính → Thêm.'));
+document.getElementById('bgHelp').addEventListener('click',()=>alert('Bắt đầu phát trong Safari, rồi khóa màn hình. Nếu nhạc dừng, thử nút Play ở màn hình khóa/Control Center. Đây là giới hạn của web app; cần ứng dụng iOS native để ưu tiên phát nền ổn định.'));
+if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script>
+</body></html>

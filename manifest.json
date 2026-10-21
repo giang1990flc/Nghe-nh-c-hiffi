@@ -1,0 +1,9 @@
+{
+  "name": "Aura Hi-Fi Online",
+  "short_name": "Aura Hi-Fi",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0c0e16",
+  "theme_color": "#0c0e16",
+  "description": "Trình phát stream trực tuyến với EQ tùy chỉnh cho iPhone."
+}
